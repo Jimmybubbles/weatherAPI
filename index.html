@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <meta name="description" content="">
+    <!--bootstrap link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--CSS link-->
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <title>Weather dashboard</title>
+</head>
+
+<body>
+    <!--Main header fluid -->
+    <div class="jumbotron jumbotron-fluid pt-2 pb-2">
+        <div class="container">
+            <h1 class="display-4 text-center">Weather Dashboard</h1>
+        </div>
+    </div>
+
+    <!--Start Container-->
+    <div class="container-fluid">
+        <!--Start row-->
+        <div class="row">
+            <!--start column-->
+            <div class="col-lg-3 bg-light pt-3 pb-4">
+
+                <h4>Search for City</h4>
+
+                <!--Start input group-->
+                <div class="input-group mb3">
+                    <input id="searchTerm" type="text" class="form-control" placeholder="CityName.." class="input-group-append">
+                    <button id="searchButton" type="button" class="btn btn-primary" id="button-addon2"></button>
+                </div>
+                <!--End input group-->
+
+            <!--Start Card-->
+                <div class="col-lg-9">
+                    <div class="currentCity" class="mt-4">
+
+                    </div>
+
+                </div>
+            <!--End Card-->
+
+            </div>
+            <!--End Column-->
+
+
+        </div>
+        <!--End Row-->
+
+        <!--Start Forcast Container-->
+        <div class="mt-4 col-md-12">
+
+            <h5 id="forecastH5" class="mt-3 hide">5 day Forcast:</h5>
+
+            <!--Start Row-->
+            <div id="forcast" class="row">
+
+
+            </div>
+            <!--End Row-->
+        </div>
+        <!--End Forcast Container-->
+    </div>
+    <!--End Container-->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/assets/script.js" async defer></script>
+</body>
+
+</html>
