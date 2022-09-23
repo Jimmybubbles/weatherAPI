@@ -19,6 +19,7 @@ going to do string methods over the weekend so i can take advantage of the loop 
 and need to learn maths alot more or find some links for common equations
 
 # link to live site 
+https://jimmybubbles.github.io/weatherAPI/
 
 # App demo
 ![weather app1](https://user-images.githubusercontent.com/110278837/191893650-4e62888c-bbb6-4e6d-b55f-e0025cbf3867.png)
