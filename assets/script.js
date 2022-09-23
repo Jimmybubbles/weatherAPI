@@ -56,21 +56,22 @@ $("#searchTerm").on("click", function() {
 });
 
 // get the current conditions for the card
-function getCurrentConditions() {
+function getCurrentConditions(response) {
     //start with empty tag
     $("#currentCity").empty()
 
     // get set data
     // pull the class styling straight from bootstrap.. interesting
     const card = $("<div>").addClass("Card");
-    const cardbody =
-    const city
-    const cityDate
-    const image
-    const temperature
-    const humidity
-    const wind
-    const 
+    const cardBody = $("<div>").addClass("card-body");
+    const city = $("<h1>").addClass("card-title").text(response.name);
+    //toLocalDateString = Converts a date to a string by using the current or specified locale.
+    const cityDate = $("<h3>").addClass("card-title").text(response.date.toLocalDateString('en-US'))
+    const image = $("<img>").attr("src", "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
+    const temperature = $("<p>").addClass("card-text").text("Temperature" + response.main.temp + "°");
+    const humidity = $("<p>").addClass("card-text").text("Humidity" + response.main.humidity + "%");
+    const wind = $("<p>").addClass("card-text").text("Wind Speed" + response.wind.speed + "Mph"); 
+    
 }
 
 
