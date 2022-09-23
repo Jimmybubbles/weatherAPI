@@ -51,11 +51,26 @@ $("#searchTerm").on("click", function() {
         console.log(response.main.humidity)
         console.log(response.wind.speed)
         console.log(response.weather[0])
+
+
+        getCurrentConditions(response)
+        // need a list to put the conditions in duh
+        generateList();
     })
 
     
 
 });
+
+// list to put the conditions in 
+
+function generateList() {
+    let listItems = $("<li>").addClass("list-group-item").text(city);
+    //append items to the list
+    $(".list").append(listItems);
+}
+
+
 
 // get the current conditions for the card
 function getCurrentConditions(response) {
@@ -68,7 +83,7 @@ function getCurrentConditions(response) {
     const cardBody = $("<div>").addClass("card-body");
     const city = $("<h1>").addClass("card-title").text(response.name);
     //toLocalDateString = Converts a date to a string by using the current or specified locale.
-    const cityDate = $("<h3>").addClass("card-title").text(response.date.toLocalDateString('en-US'))
+    const cityDate = $("<h3>").addClass("card-title").text(date.toLocaleDateString('en-US'))
     const image = $("<img>").attr("src", "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
     const temperature = $("<p>").addClass("card-text").text("Temperature" + response.main.temp + "°");
     const humidity = $("<p>").addClass("card-text").text("Humidity" + response.main.humidity + "%");
@@ -80,9 +95,15 @@ function getCurrentConditions(response) {
     city.append(cityDate, image)
     cardBody.append(city, temperature, humidity, wind);
     card.append(cardBody)
-    $("currentCity").append(card)
+    $("#currentCity").append(card)
 
 }
 
+function getCurrentForecast() {
 
+    $.ajax({
+        url.
+    })
+
+}
 
