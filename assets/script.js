@@ -130,7 +130,7 @@ function getCurrentForecast() {
             // had the index set to 1 so filled the whole page 
             if(results[i].dt_txt.indexOf("12:00:00") !== -1) {
 
-                 const card = $("<div>").addClass("card col-md-2 ml-4 bg-primary text-white");
+                 const card = $("<div>").addClass("card col-md-2 ml-4 bg-dark text-white");
                  const cardBody = $("<div>").addClass("card-body p-3 forecastBody");
                  const cityDate = $("<h3>").addClass("card-title").text(date.toLocaleDateString('en-US'));
                  const temperature = $("<p>").addClass("card-text").text("Temperature: " + results[i].main.temp + "°");
