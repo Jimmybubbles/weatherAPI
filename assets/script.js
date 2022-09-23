@@ -86,9 +86,9 @@ function getCurrentConditions(response) {
     //toLocalDateString = Converts a date to a string by using the current or specified locale.
     const cityDate = $("<h3>").addClass("card-title").text(date.toLocaleDateString('en-US'))
     const image = $("<img>").attr("src", "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
-    const temperature = $("<p>").addClass("card-text").text("Temperature" + response.main.temp + "°");
-    const humidity = $("<p>").addClass("card-text").text("Humidity" + response.main.humidity + "%");
-    const wind = $("<p>").addClass("card-text").text("Wind Speed" + response.wind.speed + "Mph")
+    const temperature = $("<p>").addClass("card-text").text("Temperature: " + response.main.temp + "°");
+    const humidity = $("<p>").addClass("card-text").text("Humidity: " + response.main.humidity + "%");
+    const wind = $("<p>").addClass("card-text").text("Wind Speed: " + response.wind.speed + "Mph")
     
 
     // add the variables to the page
@@ -127,16 +127,18 @@ function getCurrentForecast() {
             console.log(day);
             console.log(hour);
             
+            // had the index set to 1 so filled the whole page 
             if(results[i].dt_txt.indexOf("12:00:00") !== -1) {
 
                  const card = $("<div>").addClass("card col-md-2 ml-4 bg-primary text-white");
                  const cardBody = $("<div>").addClass("card-body p-3 forecastBody");
                  const cityDate = $("<h3>").addClass("card-title").text(date.toLocaleDateString('en-US'));
-                 const temperature = $("<p>").addClass("card-text").text("Temperature" + results[i].main.temp + "°");
-                 const humidity = $("<p>").addClass("card-text").text("Humidity" + results[i].main.humidity + "%");
+                 const temperature = $("<p>").addClass("card-text").text("Temperature: " + results[i].main.temp + "°");
+                 const humidity = $("<p>").addClass("card-text").text("Humidity: " + results[i].main.humidity + "%");
+                 const wind = $("<p>").addClass("card-text").text("Wind Speed: " + results[i].wind.speed + "Mph");
                  const image = $("<img>").attr("src", "http://openweathermap.org/img/w/" + results[i].weather[0].icon + ".png");
                 
-            cardBody.append(cityDate,image,temperature,humidity);
+            cardBody.append(cityDate,image,temperature,humidity,wind);
             card.append(cardBody);
             $("#forecast").append(card)
 
