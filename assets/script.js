@@ -54,6 +54,7 @@ $("#searchTerm").on("click", function() {
 
 
         getCurrentConditions(response)
+        getCurrentForecast(response)
         // need a list to put the conditions in duh
         generateList();
     })
@@ -87,14 +88,14 @@ function getCurrentConditions(response) {
     const image = $("<img>").attr("src", "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
     const temperature = $("<p>").addClass("card-text").text("Temperature" + response.main.temp + "°");
     const humidity = $("<p>").addClass("card-text").text("Humidity" + response.main.humidity + "%");
-    const wind = $("<p>").addClass("card-text").text("Wind Speed" + response.wind.speed + "Mph"); 
+    const wind = $("<p>").addClass("card-text").text("Wind Speed" + response.wind.speed + "Mph")
     
 
     // add the variables to the page
     // when appending start from the button and work up.\
     city.append(cityDate, image)
     cardBody.append(city, temperature, humidity, wind);
-    card.append(cardBody)
+    card.append(cardBody);
     $("#currentCity").append(card)
 
 }
@@ -102,7 +103,18 @@ function getCurrentConditions(response) {
 function getCurrentForecast() {
 
     $.ajax({
-        url.
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + apiKey,
+        method: "GET"
+    }).then(function (response) {
+
+        console.log(response)
+        console.log(response.dt)
+
+        //list format for response 
+        let results = response.list;
+        console.log(results)
+
+
     })
 
 }
