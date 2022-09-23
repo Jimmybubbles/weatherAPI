@@ -26,8 +26,8 @@ $("#searchTerm").on("click", function() {
     $("#searchTerm").val("");
 
     //api url with city input and api key
-
-    const queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + apiKey;
+    https://api.openweathermap.org/data/2.5/weather?
+    const queryUrl = "" + city + apiKey;
     
     // url
     // Type: String
@@ -72,6 +72,14 @@ function getCurrentConditions(response) {
     const humidity = $("<p>").addClass("card-text").text("Humidity" + response.main.humidity + "%");
     const wind = $("<p>").addClass("card-text").text("Wind Speed" + response.wind.speed + "Mph"); 
     
+
+    // add the variables to the page
+    // when appending start from the button and work up.\
+    city.append(cityDate, image)
+    cardBody.append(city, temperature, humidity, wind);
+    card.append(cardBody)
+    $("currentCity").append(card)
+
 }
 
 
