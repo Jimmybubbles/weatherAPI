@@ -26,8 +26,8 @@ $("#searchTerm").on("click", function() {
     $("#searchTerm").val("");
 
     //api url with city input and api key
-    https://api.openweathermap.org/data/2.5/weather?
-    const queryUrl = "" + city + apiKey;
+    
+    const queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + apiKey;
     
     // url
     // Type: String
@@ -48,7 +48,9 @@ $("#searchTerm").on("click", function() {
 
         console.log(response)
         console.log(response.name)
-
+        console.log(response.main.humidity)
+        console.log(response.wind.speed)
+        console.log(response.weather[0])
     })
 
     
